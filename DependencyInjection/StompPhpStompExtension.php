@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace StompPhp\StompBundle\DependencyInjection;
 
-use Stomp\Client;
+use Stomp\StatefulStomp;
 use StompPhp\StompBundle\Stomp\ClientFactory;
 use StompPhp\StompBundle\Stomp\Subscription;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -46,7 +46,7 @@ class StompPhpStompExtension extends Extension
         unset($options['public']);
 
         return
-            (new Definition(Client::class))
+            (new Definition(StatefulStomp::class))
                 ->setFactory(
                     [
                         ClientFactory::class,

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace StompPhp\StompBundle\Stomp;
 
-use Stomp\Client;
 use Stomp\StatefulStomp;
 
 final class ClientFactory
@@ -12,7 +11,7 @@ final class ClientFactory
     /**
      * @param array $options
      *
-     * @return Client
+     * @return StatefulStomp
      *
      * @throws \Stomp\Exception\ConnectionException
      */
